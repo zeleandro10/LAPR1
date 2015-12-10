@@ -1,0 +1,56 @@
+package symplex;
+import java.util.Scanner;
+import java.io.FileReader;
+/**
+ *
+ * @author Leandro Santos
+ */
+public class Symplex {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+
+    public static int selectEntryValue(int[][] tabelaSimplex) { 
+
+         int indice = 0, menor = tabelaSimplex[0][0]; 
+
+         for (int i = 1; i < tabelaSimplex[0].length - 1; i++) { 
+
+ 
+            if (tabelaSimplex[0][i] < menor) { 
+                menor = tabelaSimplex[0][i]; 
+                 indice = i; 
+             } 
+ 
+ 
+         } 
+         return indice; 
+} 
+
+    
+    public static double determinarPivot (int tabelaSimplex [][], int indice ){
+       
+        double div1, div2,div3,pivot;
+        
+        div1= tabelaSimplex[1][6]/tabelaSimplex[2][indice];
+        div2=tabelaSimplex[2][6]/tabelaSimplex[3][indice];
+        div3=tabelaSimplex[3][6]/tabelaSimplex[4][indice];
+        
+        
+       
+     if((div1<div2) && (div1<div3)&& div1>0){
+         pivot=div1;
+     }else
+     if((div2<div1) && (div2<div3)&& div2>0){
+         pivot=div2;
+     }else
+         if(div3>0){
+         pivot=div3;
+         }
+      
+     
+         }   
+       
+    }
