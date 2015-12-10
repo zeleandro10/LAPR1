@@ -1,0 +1,93 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class main {
+    
+    // Proprieties
+    public double param1, param2;
+    public double[][] array;
+        
+    // Construtor
+    
+    public main() {
+        Scanner scan = new Scanner(System.in);
+        int param1 = scan.nextInt();
+        int param2 = scan.nextInt();
+        
+        printArray();
+          
+    }
+    
+    public void validateConditions(double var, short operation) {
+                
+        switch (operation) {
+            case 1 :
+                if (param1 <= 4) {
+                    array[2][6] = 4;
+                    
+                    array[2][1] = 1;
+                    array[2][2] = 0;
+                }
+                else {
+                     array[2][6] = 4;
+                    
+                    array[2][1] = 1;
+                    array[2][2] = 0;
+                }
+                break;
+            
+            case 2 :
+                if (2 * param2 <= 12) {
+                    array[3][6] = 0;                   
+                    
+                    array[3][1] = 0;
+                    array[3][2] = 0;
+                }
+                else {
+                    array[3][6] = 0;                   
+                    
+                    array[3][1] = 0;
+                    array[3][2] = 0;
+                }
+                break;
+            
+            case 3 : 
+                if ((3 * param1 + 2* param2) <=18) {
+                    array[4][6] = 18;    
+                    
+                    array[4][1] = 3;
+                    array[4][2] = 2;
+                }
+                else {
+                    array[4][6] = 0;                   
+                    
+                    array[4][1] = 0;
+                    array[4][2] = 0;
+                }
+                break;
+        }
+    }
+    
+    public void printArray() {
+        array = new double[5][7];
+
+        // desenhar matriz                
+        array[1][3] = 0;
+        array[1][4] = 0;
+        array[1][5] = 0;
+        
+        array[2][3] = 1;
+        array[2][4] = 0;
+        array[2][5] = 0;
+        
+        array[3][3] = 0;
+        array[3][4] = 1;
+        array[3][5] = 0;
+        
+        array[4][3] = 0;
+        array[4][4] = 0;
+        array[4][5] = 1; 
+        
+        System.out.print(Arrays.toString(array));
+    }
+}
