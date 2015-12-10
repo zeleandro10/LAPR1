@@ -1,0 +1,26 @@
+public static double[][] pivoting(double matriz[][], int[] indicePivot) {
+
+        int linhaPivot = indicePivot[0];
+        int colunaPivot = indicePivot[1];
+        double pivot = matriz[linhaPivot][colunaPivot];
+        double[][] matrizCondens = new double[4][4];
+
+        for (int x = 0; x < matriz[0].length; x++) {
+            matriz[linhaPivot][x] = matriz[linhaPivot][x] / pivot;
+        }
+
+        for (int i = 0; i < matriz.length; i++) {
+            if (i != linhaPivot) {
+                for (int j = 0; j < matriz[i].length; j++) {
+
+                    matrizCondens[i][j] = matriz[i][j] - (matriz[i][colunaPivot] * matriz[linhaPivot][j]);
+
+                }
+            }
+        }
+        for (int x = 0; x < matriz[0].length; x++) {
+            matrizCondens[linhaPivot][x] = matriz[linhaPivot][x];
+        }
+
+        return matrizCondens;
+    }
