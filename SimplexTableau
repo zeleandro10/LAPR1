@@ -1,0 +1,57 @@
+public static double[][] createSimplexTableau(String[] conditions) {
+
+        int numLinhas = Integer.parseInt(conditions[0]);
+        int numeroCond = numLinhas - 1;
+        double[][] simplext = new double[numLinhas][numeroCond + 3];
+
+        //Preenche a primeira linha da tabela
+        if (conditions[1].charAt(2) == 'X') {
+            simplext[0][0] = -1;
+
+            
+            if (conditions[1].charAt(5) == 'X') {
+
+                simplext[0][1] = -1;
+            } else {
+
+                if (Character.getNumericValue(conditions[1].charAt(5)) == 0) {
+
+                    simplext[0][1] = Character.getNumericValue(conditions[1].charAt(5));
+                } else {
+
+                    simplext[0][1] = -Character.getNumericValue(conditions[1].charAt(5));
+                }
+            }
+
+        } else {
+
+            if (Character.getNumericValue(conditions[1].charAt(2)) == 0) {
+                simplext[0][0] = Character.getNumericValue(conditions[1].charAt(2));
+
+            } else {
+                simplext[0][0] = -Character.getNumericValue(conditions[1].charAt(2));
+            }
+
+            if (conditions[1].charAt(6) == 'X') {
+
+                simplext[0][1] = -1;
+            } else {
+                
+                if (Character.getNumericValue(conditions[1].charAt(6)) == 0) {
+
+                    simplext[0][1] = Character.getNumericValue(conditions[1].charAt(5));
+                } else {
+
+                    simplext[0][1] = -Character.getNumericValue(conditions[1].charAt(6));
+                }
+              
+        }
+        for (int i = 2; i < numeroCond + 3; i++) {
+            simplext[0][i] = 0;
+        }
+        //Até este ponto, a primeira linha fica preenchida
+
+        
+    }
+        return simplext;
+    }
