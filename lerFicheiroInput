@@ -1,10 +1,11 @@
-  public static String[] lerFicheiroInput() throws FileNotFoundException {
+public static String[] lerFicheiroInput() throws FileNotFoundException {
 
-        String linha;
-        String nomeFicheiro = "file.txt";
         String[] conditions = new String[NUMBER_INPUT_LINES];
+
+        int nLinhas = 0;
+        String linha, nomeFicheiro = "file.txt";
+
         Scanner fileIn = new Scanner(new File(nomeFicheiro));
-        int nLinhas = 1;
 
         while (fileIn.hasNext()) {
 
@@ -18,7 +19,6 @@
 
         }
         fileIn.close();
-        conditions[0] = String.valueOf(nLinhas);
+
         return conditions;
     }
-}
