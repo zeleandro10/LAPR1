@@ -1,0 +1,15 @@
+ 
+ public static int selectEntryValue(int[][] tabelaSimplex) {
+
+        int indice = 0, menor = tabelaSimplex[0][0];
+
+        for (int i = 1; i < tabelaSimplex[0].length - 1; i++) {
+
+            if (tabelaSimplex[0][i] < menor) {
+                menor = tabelaSimplex[0][i];
+                indice = i;
+            }
+
+        }
+        return indice;
+    }
